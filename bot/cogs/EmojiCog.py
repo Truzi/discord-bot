@@ -11,11 +11,11 @@ class EmojiCog(commands.Cog):
     self.domains = ('7tv', 'betterttv', 'frankerfacez')
 
   @commands.command()
-  async def addEmoji(self, ctx: commands.Context):
+  async def addEmoji(self, ctx: commands.Context, name, url):
+    if not ctx.author.guild_permissions.manage_emojis:
+      return await ctx.send("You don't have sufficient permissions!")
+    
     filePath = './emote.png'
-    message = ctx.message.content[len(self.bot.command_prefix) + len(ctx.command.name):].lstrip().split(' ')
-    name = message[0]
-    url = message[1]
 
     if any(domain in url for domain in self.domains):
       for domain in self.domains:
