@@ -1,0 +1,27 @@
+# Discord Bot .gitignore
+
+# Python-related
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Environment
+.env
+
+# Logs
+logs/
+*.log
+
+# Temporary files
+*.bak
+*.swp
+
+# Miscellaneous
+.DS_Store
+
+# Database
+db.*
+
+# Virtual Environment
+venv/
